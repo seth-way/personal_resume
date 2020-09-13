@@ -10,10 +10,12 @@ class Header extends Component {
       var name = this.props.data.name;
       var firstName = name.split(' ')[0];
       var description= this.props.data.description;
+      /*
       var city= this.props.data.address.city;
       var networks= this.props.data.social.map(function(network){
         return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
       })
+      */
     }
 
     return (

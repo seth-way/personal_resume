@@ -9,7 +9,7 @@ hljs.configure({usBR: true});
 const removeLeadingTrailingNewLines = (bodySTR) => {
     let result = bodySTR;
 
-    if(result.lastIndexOf('\"') === result.length - 1) {
+    if(result.lastIndexOf('"') === result.length - 1) {
         result = result.slice(0, result.length - 1);
     }
 
@@ -39,19 +39,7 @@ const parseDescriptionSolution = (bodySTR) => {
     return [description, solution];
 }
 
-const findLongestLineOfCode = (codeArray) => {
-    return codeArray.reduce((acc, line) => {
-        if (line.length > acc) {
-            acc = line.length;
-        }
-        return acc;
-    }, 0);
-}
-
 class Solution extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         let preCodes = document.querySelectorAll("pre code:not(.hljs)");
@@ -77,7 +65,6 @@ class Solution extends Component {
         description = removeLeadingTrailingNewLines(description);
         solution = removeLeadingTrailingNewLines(solution);
         const solutionArray = solution.split('\\n');
-        const longestLine = findLongestLineOfCode(solutionArray);
 
         return (
             <div className="solution">

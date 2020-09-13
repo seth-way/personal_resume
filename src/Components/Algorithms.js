@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import request from 'request';
 import * as Promise from 'bluebird';
 import CarouselComponent from './AlgorithmComponents/CarouselComponent';
 import config from '../config.js';

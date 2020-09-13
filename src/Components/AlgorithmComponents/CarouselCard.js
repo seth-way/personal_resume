@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Modal, { setAppElement } from 'react-modal';
-import { render } from 'react-dom';
 
 // array used for [border, background] card colors
 const colorPicker = {
@@ -8,8 +6,6 @@ const colorPicker = {
   Medium: ['#D89B46', "#F4C583"],
   Hard: ['#C34A46', "#E48683"] ,
 };
-
-Modal.setAppElement('#root');
 
 class CarouselCard extends Component {
     constructor(props) {
@@ -64,7 +60,8 @@ class CarouselCard extends Component {
       }
 
       if (filename !== 'github repository') {
-        const { message, daysOld, url, difficulty, body } = algorithm;
+        const { daysOld, difficulty } = algorithm;
+        // const { message, url, body } = algorithm;
         
         styleObj.border = `10px solid ${colorPicker[difficulty][0]}`;
         styleObj.backgroundColor = colorPicker[difficulty][1];
