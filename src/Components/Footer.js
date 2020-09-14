@@ -1,3 +1,4 @@
+import { listLanguages } from 'highlight.js';
 import React, { Component } from 'react';
 
 class Footer extends Component {
@@ -17,7 +18,28 @@ class Footer extends Component {
            <ul className="social-links">
               {networks}
            </ul>
-
+           <ul className="tech-used">
+               <li className="tech-used-row">
+                  <div>
+                     <h3>
+                        Hosted on
+                     </h3>
+                  </div>
+                  <div>
+                     <img className="tech-icon" src={"/images/icons/azure.png"} alt="azure logo" />
+                  </div>
+               </li>
+               <li className="tech-used-row">
+                  <div>
+                     <h3>
+                        Deployed using 
+                     </h3>
+                  </div>
+                  <div>
+                     <img className="tech-icon" src={"/images/icons/docker.png"} alt="docker logo" />
+                  </div>
+               </li>
+          </ul>
            <ul className="copyright">
               <li>&copy; Copyright 2020 SWay</li>
            </ul>
