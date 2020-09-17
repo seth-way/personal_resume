@@ -58,7 +58,6 @@ class CarouselComponent extends Component {
         <div>
           <div
             className="carouselContainer"
-            style={showSolution ? {display: "none"} : {}}
           >
             <Carousel
               renderArrow={this.myArrow}

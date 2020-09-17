@@ -67,17 +67,17 @@ class Solution extends Component {
         const solutionArray = solution.split('\\n');
 
         return (
-            <div className="solution">
-                <div
-                    id="close-solution"
-                    onClick={() => { showSolution ? closeSolution() : console.log('')}}
-                >
-                    <a><i className="icon-plus"></i></a>
-                </div>
+            <div className="solution" id="activeSolution">
                 <div className="solutionHeader">
                     <h1>{title}</h1>
                 </div>
                 <div className="content">
+                    <div
+                        id="close-project"
+                        onClick={() => { closeSolution()}}
+                    >
+                        <a><i className="icon-plus"></i></a>
+                    </div>
                     <div className="description">
                         <p className="codeHeader">CHALLENGE:</p>
                         <div className="dList">
@@ -100,7 +100,6 @@ class Solution extends Component {
                     >
                         <a  
                             className="button btn close-btn"
-                            href="#algorithms"
                         >Close Solution </a>
                     </span>
                     <span>

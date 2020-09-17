@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as Promise from 'bluebird';
+import { scroller } from 'react-scroll';
 import CarouselComponent from './AlgorithmComponents/CarouselComponent';
 import config from '../config.js';
 
@@ -99,10 +100,23 @@ class Algorithms extends Component {
 
    openSolution() {
      this.setState({showSolution: true});
+     setTimeout(() => scroller.scrollTo('activeSolution',
+      {
+        duration: 750,
+        delay: 75,
+        smooth: true,
+        offset: -50,
+      }), 200);
    }
 
    closeSolution() {
-     this.setState({showSolution: false});
+     scroller.scrollTo('algorithms', {
+        duration: 750,
+        delay: 75,
+        smooth: true,
+        offset: -50,
+      });
+      setTimeout(() => this.setState({ showSolution: false }), 900);
    }
    
    render() {
