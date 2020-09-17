@@ -21,7 +21,7 @@ class Footer extends Component {
            <ul className="tech-used">
                <li className="tech-used-row">
                   <div>
-                     <h3>
+                     <h3 style={{color: "white"}}>
                         Hosted on
                      </h3>
                   </div>
@@ -31,7 +31,7 @@ class Footer extends Component {
                </li>
                <li className="tech-used-row">
                   <div>
-                     <h3>
+                     <h3 style={{color: "white"}}>
                         Deployed using 
                      </h3>
                   </div>
