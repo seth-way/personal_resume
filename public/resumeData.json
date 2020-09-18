@@ -102,18 +102,34 @@
   "portfolio":{
     "projects": [
       {
+        "title":"Reserve A Table",
+        "description":"Table Reservation App Built to Withstand Spikes in Traffic",
+        "path":"reserve_a_table",
+        "url":"https://github.com/RSV-App"
+      },
+      {
         "title":"Fantasy Football Tracker",
         "description":"A React-Based Fantasy Football Draft Tracking Tool",
-        "image":"ff",
-        "url":"https://github.com/seth-way/fantasyFootballDraftKit",
-        "blurb": "This is a temporary blurb. It will be over-written soon..."
+        "path":"ff",
+        "url":"https://github.com/seth-way/fantasyFootballDraftKit"
       },
       {
         "title":"Fanorona",
         "description":"A Two-Player Board Game",
-        "image":"fanorona",
-        "url":"https://github.com/seth-way/BoardGame",
-        "blurb": "This is a temporary blurb. It will be over-written soon..."
+        "path":"fanorona",
+        "url":"https://github.com/seth-way/BoardGame"
+      },
+      {
+        "title":"Bowling",
+        "description":"A Basic, No-CSS Web-App that Uses Logic to Track Bowling Scores",
+        "path":"bowling",
+        "url":"https://github.com/seth-way/ghrsea08-mini-apps-2/tree/master/challenge_3"
+      },
+      {
+        "title":"More to Come...",
+        "description": "Check Back Soon for More Exciting Projects!",
+        "path":"more",
+        "url":"https://github.com/seth-way?tab=repositories"
       }
     ]
   }

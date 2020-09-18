@@ -14,6 +14,7 @@ class Portfolio extends Component {
       loaded: false,
     }
 
+    this.updateProject = this.updateProject.bind(this);
     this.openProject = this.openProject.bind(this);
     this.closeProject = this.closeProject.bind(this);
   }
@@ -36,9 +37,13 @@ class Portfolio extends Component {
       }
   }
 
-  openProject({ target }) {
+  updateProject({ target }) {
     const index = target.getAttribute('idx');
-    this.setState({ activeProject: index, showActiveProject: true });
+    this.setState({ activeProject: index });
+  }
+
+  openProject() {
+    this.setState({ showActiveProject: true });
     setTimeout(scroller.scrollTo('activeProject',
       {
         duration: 750,
@@ -50,14 +55,14 @@ class Portfolio extends Component {
   }
 
   closeProject() {
-    const { activeProject } = this.state
-      scroller.scrollTo(`project_${activeProject}`, {
-        duration: 750,
-        delay: 75,
-        smooth: true,
-        offset: -100,
-      });
-      setTimeout(() => this.setState({ showActiveProject: false }), 900);
+    const { activeProject } = this.state;
+    scroller.scrollTo(`project_${activeProject}`, {
+      duration: 750,
+      delay: 75,
+      smooth: true,
+      offset: -100,
+    });
+    setTimeout(() => this.setState({ showActiveProject: false }), 900);
   }
 
   render() {
@@ -74,6 +79,7 @@ class Portfolio extends Component {
       <section id="portfolio">
         <ProjectsGallery
           projects={projects}
+          updateProject={this.updateProject}
           openProject={this.openProject}
         />
         <div id="activeProject">

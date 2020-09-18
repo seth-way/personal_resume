@@ -5,7 +5,7 @@ const projectCardColorPicker = (idx) => {
     return colors[idx % colors.length];
 }
 
-const renderProjectsByRow = (projects, ppr, callback) => {
+const renderProjectsByRow = (projects, ppr, cb1, cb2) => {
     const numRows = Math.ceil((projects.length + 1) / ppr);
     let projectsByRow = new Array(numRows);
     
@@ -19,13 +19,13 @@ const renderProjectsByRow = (projects, ppr, callback) => {
     
     const mapRow = (row) => (
         row.map((project) => {
-            const { image, titleColor, descriptionColor, title, description, idx } = project;
-            const projectImage = '/images/portfolio/' + image + '.jpg';
+            const { path, title, description, idx } = project;
+            const projectImage = '/images/portfolio/images/' + path + '.jpg';
             return (                
                 <div
                     className="portfolio-item"
                     style={{backgroundImage: `url(${projectImage})`}}
-                    onClick={(e) => callback(e)}
+                    onClick={(e) => {cb1(e); cb2();}}
                     idx={idx}
                     id={`project_${idx}`}
                 >
@@ -75,7 +75,7 @@ class ProjectsGallery extends Component {
     }
 
     render() {
-        const { projects, openProject } = this.props;
+        const { projects, updateProject, openProject } = this.props;
         const { windowWidth } = this.state;
 
         if (windowWidth && projects.length) { //once window size and projects have loaded
@@ -85,7 +85,7 @@ class ProjectsGallery extends Component {
                 <div className="portfolio-container" style={{width: `${containerWidth}px`}}>
                     <h1>Check Out a Few of My Most Recent Projects.</h1>
                     <div>
-                        {renderProjectsByRow(projects, projectsPerRow, openProject)}
+                        {renderProjectsByRow(projects, projectsPerRow, updateProject, openProject)}
                     </div>
                 </div>
             );

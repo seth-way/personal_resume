@@ -536,17 +536,24 @@ ul#nav li.current a { color: #69BE28; }
 .project-card-overlay h1 {
    font: 22px/30px 'opensans-bold', sans-serif;
 }
-.project-card-gif {
-   background-size: cover;
-   border: thick black solid;
-   margin-top: 35px;
-   margin-bottom: 35px;
-}
-.project-description {
-   margin: 20px;
-}
-.project-description p {
 
+.project-description {
+   width: 93%;
+   margin: 20px;
+   color: black;
+}
+.md-center-img {
+   display: flex;
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 25px;
+   margin-bottom: 25px;
+}
+.md-img {
+   width: 90%;
+   max-width: 600px;
+   border: thick black solid;
 }
 /* popup modal */
 .popup-modal {

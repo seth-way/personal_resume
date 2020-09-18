@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-/*
-import * as THREE from 'three'
-import BIRDS from 'vanta/dist/vanta.birds.min'
-*/
+import ReactMarkdown from 'react-markdown/with-html';
+
 
 const dynamicStyles = (small) => {
     const marginLR = small ? "15px" : "50px";
@@ -16,13 +14,28 @@ const dynamicStyles = (small) => {
 class ProjectCard extends Component {
     constructor(props) {
         super(props);
-        this.vantaRef = React.createRef();
-
         this.state = {
             width: 1400,
+            text: "still loading project info.....",
         };
-
+        this.updateMarkDown = this.updateMarkDown.bind(this);
         this.updateDimensions = this.updateDimensions.bind(this);
+    }
+
+    updateMarkDown() {
+        const { project } = this.props;
+        const { path } = project;
+        const mdPath = '/markdowns/' + path + '.md';
+        fetch(mdPath)
+            .then(response => {
+                return response.text()
+            })
+            .then(text => {
+                this.setState({
+                    text,
+                })
+            })
+            .catch(err => console.log);
     }
 
     updateDimensions() {
@@ -30,40 +43,27 @@ class ProjectCard extends Component {
     }
 
     componentDidMount() {
+        console.log('projectCard componentDidMount()');
         this.updateDimensions();
+        this.updateMarkDown();
         window.addEventListener('resize', this.updateDimensions);
-        /*
-        this.vantaEffect = BIRDS({
-            el: this.vantaRef.current,
-            THREE: THREE // use a custom THREE when initializing
-        });
+    }
 
-        this.vantaEffect.setOptions({
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            backgroundColor: "#556b2f",
-            color1: '0x#688c98',
-            color2: '0x#ffcc32',
-            colorMode: "lerp"
-          })
-          */
+    componentDidUpdate(prevProps) {
+        if (prevProps.project.title !== this.props.project.title) {
+            this.updateMarkDown();
+        }
     }
 
     componentWillUnmount() {
-        // if (this.vantaEffect) this.vantaEffect.destroy();
         window.removeEventListener('resize', this.updateDimensions);
     }
 
     render () {
-        const { width } = this.state;
+        console.log('projectCard render()')
+        const { width, text } = this.state;
         const { project, closeProject } = this.props;
-        const { image, title, blurb, url } = project;
-        const projectGIF = '/images/portfolio/' + image + '.gif';
+        const { title, url } = project;
         const smallScreen = width < 500;
 
         const [
@@ -72,9 +72,6 @@ class ProjectCard extends Component {
             cardMarginBottom,
             fontSize
             ] = dynamicStyles(smallScreen);
-
-        const gifWidth = smallScreen ? 225 : Math.min(Math.floor( 3 * width / 4), 600);
-        const gifHeight = gifWidth / 16 * 9;
         
         const overlayStyleObj = {
             marginTop: cardMarginTop,
@@ -87,7 +84,7 @@ class ProjectCard extends Component {
 
 
         return (
-            <div className="project-card" id="activeProject" name="#activeProject" /*ref={this.vantaRef}*/>
+            <div className="project-card" id="activeProject" name="#activeProject">
                 <div className="project-card-overlay" style={overlayStyleObj}>
                     <div
                         id="close-project"
@@ -98,11 +95,12 @@ class ProjectCard extends Component {
                     <div className="project-card-overlay-header">
                         <h1>{title}</h1>
                     </div>
-                    <div className="project-card-gif" style={{backgroundImage: `url(${projectGIF})`, width:`${gifWidth}px`, height: `${gifHeight}px`}}>
-
-                    </div>
                     <div className="project-description" style={{fontSize: fontSize}}>
-                        {blurb.split('\n').map((paragraph, idx) => (<p>{paragraph}</p>))}
+                        <ReactMarkdown
+                            source={text}
+                            escapeHtml={false}
+                            className="project-description"
+                        />
                     </div>
                     <div className="projectButtons" >
                     <span
