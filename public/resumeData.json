@@ -102,6 +102,12 @@
   "portfolio":{
     "projects": [
       {
+        "title":"My Current Project...",
+        "description":"Collaborating With Other Developers & Designers to Build A Webchat Editor",
+        "path":"currently",
+        "url":"https://github.com/pavolum/WebChat-Editor"
+      },
+      {
         "title":"Reserve A Table",
         "description":"Table Reservation App Built to Withstand Spikes in Traffic",
         "path":"reserve_a_table",
