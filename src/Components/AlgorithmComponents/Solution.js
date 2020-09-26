@@ -43,7 +43,6 @@ class Solution extends Component {
 
     componentDidMount() {
         let preCodes = document.querySelectorAll("pre code:not(.hljs)");
-        console.log(preCodes);
         for(var i = 0; i < preCodes.length; i++) {
           hljs.highlightBlock(preCodes[i]);
         }
@@ -51,7 +50,6 @@ class Solution extends Component {
 
     componentDidUpdate() {
         let preCodes = document.querySelectorAll("pre code:not(.hljs)");
-        console.log(preCodes);
         for(var i = 0; i < preCodes.length; i++) {
           hljs.highlightBlock(preCodes[i]);
         }

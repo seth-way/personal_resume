@@ -43,7 +43,6 @@ class ProjectCard extends Component {
     }
 
     componentDidMount() {
-        console.log('projectCard componentDidMount()');
         this.updateDimensions();
         this.updateMarkDown();
         window.addEventListener('resize', this.updateDimensions);
@@ -60,7 +59,6 @@ class ProjectCard extends Component {
     }
 
     render () {
-        console.log('projectCard render()')
         const { width, text } = this.state;
         const { project, closeProject } = this.props;
         const { title, url } = project;

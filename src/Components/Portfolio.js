@@ -27,7 +27,6 @@ class Portfolio extends Component {
 
         projects.forEach((project, index) => {
             project.idx = index;
-            console.log(JSON.stringify(project));
         });
 
         this.setState({ 
