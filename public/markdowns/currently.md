@@ -19,5 +19,3 @@ Our hope is that this application will make working with Microsoft's chat bot fr
 We anticipate this application will prove useful for many developers in this workspace.
 
 Check back soon for future updates!
-
-6284
