@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: `${name}'s virtual resume. Written in TypeScript on the NextJS React framework.`,
 };
 
+<script async src='node_modules/@material-tailwind/html/scripts/ripple.js' />;
+
 export default function RootLayout({
   children,
 }: Readonly<{

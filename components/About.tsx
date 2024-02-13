@@ -1,46 +1,74 @@
 'use client';
 
 import * as React from 'react';
-import { Avatar, Box, Button, Container, Typography } from '@mui/material';
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import { Button, Typography } from '@material-tailwind/react';
+import Image from 'next/image';
+import { FaDownload } from 'react-icons/fa6';
+import * as data from '@/public/resumeData.json';
+
+declare module '@material-tailwind/react' {
+  interface ColorOverrides {
+    primary: true;
+  }
+}
 
 export default function About() {
-  const { name, bio, email, phone, address } =
-    require('@/public/resumeData.json').main;
+  const { name, bio, email, phone, address } = data.main;
 
   return (
-    <Box className='flex flex-col justify-center items-center my-6 lg:my-28'>
-      <Container className='flex max-lg:flex-col justify-center items-center mt-6 [&>*]:lg:mx-10'>
-        <Avatar
-          alt={name}
-          src='/images/headshot.jpg'
-          sx={{ width: 200, height: 200 }}
-        />
-        <Box className='text-center max-w-prose max-lg:mt-10'>
-          <Typography variant='h4'>About Me</Typography>
-          <Typography variant='body1'>{bio}</Typography>
-        </Box>
-      </Container>
-      <Container className='flex max-lg:flex-col justify-center items-center lg:mt-12 mb-6 [&>*]:lg:mx-10'>
-        <Box className='flex flex-col items-center mt-10'>
-          <Typography variant='h4'>Contact Details</Typography>
-          <Typography variant='subtitle1'>{name}</Typography>
-          <Typography variant='subtitle2'>{`${address.city},`}</Typography>
-          <Typography variant='subtitle2'>{address.state}</Typography>
-          <Typography variant='subtitle2'>{phone}</Typography>
-          <Typography variant='subtitle2'>{email}</Typography>
-        </Box>
-        <Box className='mt-10'>
-          <Button
-            variant='contained'
-            startIcon={<FileDownloadIcon />}
-            href='/resume.pdf'
-            download
-          >
-            Download Resume
-          </Button>
-        </Box>
-      </Container>
-    </Box>
+    <div className='content py-12 lg:p-28 gap-10 lg:gap-20'>
+      <div className='flex flex-col xl:flex-row justify-center items-center gap-10 lg:gap-20'>
+        <div className='shrink-0 size-48 xl:size-96 relative overflow-hidden'>
+          <Image
+            src='/images/headshot.jpg'
+            alt='headshot'
+            fill
+            style={{ objectFit: 'cover', borderRadius: '400px' }}
+          />
+        </div>
+        <div className='text-center max-w-prose'>
+          <Typography variant='h2' placeholder='about_me'>
+            About Me
+          </Typography>
+          <Typography variant='lead' placeholder='bio'>
+            {bio}
+          </Typography>
+        </div>
+      </div>
+      <div className='flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20'>
+        <div className='flex flex-col items-center'>
+          <Typography variant='h3' placeholder='contact_details'>
+            Contact Details
+          </Typography>
+          <Typography variant='paragraph' placeholder='name'>
+            {name}
+          </Typography>
+          <Typography
+            variant='small'
+            placeholder='city'
+          >{`${address.city},`}</Typography>
+          <Typography variant='small' placeholder='state'>
+            {address.state}
+          </Typography>
+          <Typography variant='small' placeholder='phone'>
+            {phone}
+          </Typography>
+          <Typography variant='small' placeholder='email'>
+            {email}
+          </Typography>
+        </div>
+        <div>
+          <a href='/resume.pdf' download>
+            <Button
+              className='flex items-center gap-4 bg-primary'
+              placeholder='resume_download'
+            >
+              <FaDownload />
+              Download Resume
+            </Button>
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }

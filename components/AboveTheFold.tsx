@@ -1,12 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Box, Container, Typography } from '@mui/material';
-
-import IconButton from '@/components/ui/IconButton';
-
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { Typography } from '@material-tailwind/react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 export default function AboveTheFold() {
   const { name, description, linkedIn, github } =
@@ -14,24 +10,25 @@ export default function AboveTheFold() {
   const firstName = name.split(' ')[0];
 
   return (
-    <Box
-      id='HOME'
-      className='flex flex-col flex-1 shrink-0  justify-center items-center min-h-screen'
-    >
-      <Typography variant='h1'>{`${firstName}.`}</Typography>
-      <Container className='max-w-prose'>
-        <Typography variant='body1' className='text-center'>
+    <div className='content min-h-screen gap-4'>
+      <Typography variant='h1' placeholder='name'>{`${firstName}.`}</Typography>
+      <div className='max-w-prose'>
+        <Typography
+          variant='lead'
+          className='text-center'
+          placeholder='description'
+        >
           {description}
         </Typography>
-      </Container>
-      <Container className='flex justify-center'>
-        <IconButton href={linkedIn} variant='linkedin'>
-          <LinkedInIcon />
-        </IconButton>
-        <IconButton href={github} variant='github'>
-          <GitHubIcon />
-        </IconButton>
-      </Container>
-    </Box>
+      </div>
+      <div className='flex justify-center gap-6'>
+        <a href={linkedIn} target='_blank'>
+          <FaLinkedin color='#0077B5' size={40} />
+        </a>
+        <a href={github} target='_blank'>
+          <FaGithub color='#6cc644' size={40} />
+        </a>
+      </div>
+    </div>
   );
 }
