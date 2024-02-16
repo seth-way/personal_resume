@@ -1,7 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { Button, Typography } from '@material-tailwind/react';
+import { Typography } from '@material-tailwind/react';
+import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import { FaDownload } from 'react-icons/fa6';
 import * as data from '@/public/resumeData.json';
@@ -60,8 +61,9 @@ export default function About() {
         <div>
           <a href='/resume.pdf' download>
             <Button
-              className='flex items-center gap-4 bg-primary'
+              className='flex items-center gap-4'
               placeholder='resume_download'
+              color='primary'
             >
               <FaDownload />
               Download Resume

@@ -26,8 +26,44 @@ const config: Config = withMT({
         },
       },
     },
+    button: {
+      defaultProps: {
+        color: 'primary',
+      },
+      valid: {
+        colors: ['primary', 'secondary'],
+      },
+      styles: {
+        variants: {
+          filled: {
+            primary: {
+              backgroud: 'bg-primary',
+              color: 'text-white',
+            },
+          },
+          outlined: {
+            primary: {
+              border: 'border border-primary',
+              color: 'text-primary',
+            },
+          },
+          gradient: {
+            primary: {
+              backgroud: 'bg-primary',
+              color: 'text-white',
+            },
+          },
+          text: {
+            primary: {
+              color: 'text-primary',
+            },
+          },
+        },
+      },
+    },
   },
   safelist: [
+    'bg-primary',
     {
       pattern: /bg-(primary|secondary|accent|destructive)/,
     },

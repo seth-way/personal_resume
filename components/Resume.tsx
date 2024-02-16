@@ -24,7 +24,7 @@ export default function Resume() {
   const { skillMessage, education, work, skills } =
     require('@/public/resumeData.json').resume;
   return (
-    <div className='content py-12 lg:py-28 gap-6 w-full'>
+    <div className='content py-12 lg:py-28 gap-6 lg:gap-20 w-full'>
       <ResumeSection education={education as Edu[]} />
       <Divider color='primary' />
       <ResumeSection work={work as Job[]} />
