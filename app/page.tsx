@@ -1,4 +1,5 @@
 'use client';
+
 import * as React from 'react';
 import { ThemeProvider } from '@material-tailwind/react';
 import AppBar from '@/components/AppBar';
@@ -6,6 +7,7 @@ import AboveTheFold from '@/components/AboveTheFold';
 import Divider from '@/components/ui/Divider';
 import About from '@/components/About';
 import Resume from '@/components/Resume';
+import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 
 type KeyAndComponent = [key: string, component: () => React.JSX.Element];
@@ -14,6 +16,7 @@ const sections: KeyAndComponent[] = [
   ['HOME', AboveTheFold],
   ['ABOUT', About],
   ['RESUME', Resume],
+  ['PROJECTS', Projects],
   ['CONTACT', Contact],
 ];
 

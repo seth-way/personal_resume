@@ -66,3 +66,10 @@ export function validateAllFormFields(values: FormValues): boolean {
     true
   );
 }
+
+// create default screen size values
+const screenKeys = Array.from({ length: 20 }, (_, i) => i * 5);
+export const screenSizes = screenKeys.reduce(
+  (v, key) => Object.assign(v, { [key]: key }),
+  {}
+);

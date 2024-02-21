@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 import withMT from '@material-tailwind/react/utils/withMT';
+import { screenSizes } from './lib/utils';
 
 const config: Config = withMT({
   content: ['./components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}'],
@@ -60,6 +62,7 @@ const config: Config = withMT({
           },
         },
       },
+      width: { 'screen/50': '50vw' },
     },
   },
   safelist: [
@@ -71,7 +74,14 @@ const config: Config = withMT({
       pattern: /border-(primary|secondary|accent|destructive)/,
     },
   ],
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        { 'w-screen': width => ({ width: `${width}vw` }) },
+        { values: Object.assign(screenSizes, theme('screenSize', {})) }
+      );
+    }),
+  ],
 }) as Config;
 
 export default config;
