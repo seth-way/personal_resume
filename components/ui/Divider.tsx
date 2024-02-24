@@ -11,7 +11,7 @@ const customDividerClass = (color: Props['color']) =>
 
 export default function CustomDivider({ color = 'accent' }: Props) {
   return (
-    <div className={'flex justify-center w-full relative shrink-0'}>
+    <div className='flex justify-center w-full relative shrink-0'>
       <hr className={customDividerClass(color)} />
     </div>
   );

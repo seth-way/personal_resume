@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ProjectPreview from '@/components/ui/ProjectPreview';
 
-import * as data from '@/public/resumeData.json';
+import data from '@/public/resumeData.json';
 
 const carouselSettings = {
   dots: true,
@@ -24,22 +24,18 @@ const carouselSettings = {
 
 export default function CustomCarousel() {
   const { projects } = data.portfolio;
-  console.log(projects);
 
   return (
     <div className='w-full'>
       <Slider {...carouselSettings}>
         {projects.map(({ title, description, path }, idx) => {
-          console.log(title);
           return (
-            <div key={`${title}_${idx}`}>
-              <ProjectPreview
-                title={title}
-                description={description}
-                path={path}
-                key={`${title}_${idx}`}
-              />
-            </div>
+            <ProjectPreview
+              title={title}
+              description={description}
+              idx={idx}
+              key={`${title}_${idx}`}
+            />
           );
         })}
       </Slider>

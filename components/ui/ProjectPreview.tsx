@@ -9,30 +9,46 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import Button from '@/components/ui/Button';
+import { Link } from 'react-scroll';
+import { useProjectStore } from '@/store/useProjectStore';
+import { useShallow } from 'zustand/react/shallow';
+import { Element, scroller } from 'react-scroll';
 
 interface iProps {
   title: string;
   description: string;
-  path: string;
+  idx: number;
   key: string;
 }
 
-// title
-// description
-//
+export default function ProjectPreview({ title, description, idx }: iProps) {
+  const [visible, toggleVisible, updateActive] = useProjectStore(
+    useShallow(state => [
+      state.visible,
+      state.toggleVisible,
+      state.updateActive,
+    ])
+  );
 
-export default function ProjectPreview({
-  title,
-  description,
-  path,
-  key,
-}: iProps) {
+  const handleClick = () => {
+    toggleVisible();
+    updateActive(idx);
+  };
+
+  const ButtonPicker = () =>
+    visible ? (
+      <Button onClick={handleClick}>Show Less</Button>
+    ) : (
+      <Link to='OPEN_PROJECT' smooth={true} offset={-30} duration={500}>
+        <Button onClick={handleClick}>See More</Button>
+      </Link>
+    );
+
   return (
     <Card
-      key={key}
       variant='gradient'
       color='gray'
-      className='flex flex-col justify-between py-4 place-items-center text-white text-center bg-gray-900'
+      className='flex flex-col justify-between place-items-center text-white text-center'
       placeholder={`${title}_preview`}
     >
       <CardHeader
@@ -55,7 +71,7 @@ export default function ProjectPreview({
         </Typography>
       </CardBody>
       <CardFooter placeholder={`${title}_footer`}>
-        <Button>See More</Button>
+        <ButtonPicker />
       </CardFooter>
     </Card>
   );

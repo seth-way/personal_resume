@@ -9,7 +9,7 @@ import {
   IconButton,
 } from '@material-tailwind/react';
 
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 interface iProps {
   sections: string[];
 }
