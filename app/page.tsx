@@ -23,7 +23,7 @@ const sections: KeyAndComponent[] = [
 export default function App() {
   return (
     <ThemeProvider>
-      <main className='w-full p-4 lg:p-8 flex flex-col items-center overflow-auto'>
+      <main className='relative w-full px-4 lg:px-8 flex flex-col items-center overflow-auto'>
         {/* AppBar requires an array of section keys only */}
         <AppBar sections={sections.map(([key]) => key)} />
         {sections.map(([id, Component], idx) => (

@@ -28,4 +28,7 @@
   .leading-relaxed {
     @apply !text-gray-400;
   }
+  canvas {
+    @apply !max-h-screen;
+  }
 }

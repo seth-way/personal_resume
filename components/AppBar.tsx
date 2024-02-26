@@ -44,7 +44,7 @@ export default function AppBar({ sections }: iProps = defaultProps) {
             <Typography
               as='li'
               variant='h5'
-              className='p-1 hover:cursor-pointer'
+              className='p-1 hover:cursor-pointer transition ease-in-out hover:scale-110 duration-300'
               placeholder={section}
             >
               {section}

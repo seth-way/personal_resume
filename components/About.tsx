@@ -61,7 +61,7 @@ export default function About() {
         <div>
           <a href='/resume.pdf' download>
             <Button
-              className='flex items-center gap-4'
+              moreCSS='flex items-center gap-4'
               placeholder='resume_download'
               color='primary'
             >
