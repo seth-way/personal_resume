@@ -43,7 +43,6 @@ jobs:
             echo "manager=pnpm" >> $GITHUB_OUTPUT
             echo "command=add" >> $GITHUB_OUTPUT
             echo "runner=pnpx" >> $GITHUB_OUTPUT
-            echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
             exit 0
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
