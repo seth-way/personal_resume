@@ -21,7 +21,7 @@ export default function About() {
       <div className='flex flex-col xl:flex-row justify-center items-center gap-10 lg:gap-20'>
         <div className='shrink-0 size-48 xl:size-96 relative overflow-hidden'>
           <Image
-            src='@/public/images/headshot.jpg'
+            src='/images/headshot.jpg'
             alt='headshot'
             fill
             style={{ objectFit: 'cover', borderRadius: '400px' }}
