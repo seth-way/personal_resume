@@ -29,7 +29,13 @@ export default function ParticlesBackground() {
         color: 'transparent',
       },
       particles: {
-        color: { value: '#ffffff' },
+        color: {
+          value: [
+            'hsl(326, 27%, 50%)',
+            'hsl(83, 37%, 63%)',
+            'hsl(24, 66%, 67%)',
+          ],
+        },
         move: {
           direction: 'none',
           enable: true,
@@ -40,7 +46,7 @@ export default function ParticlesBackground() {
         },
         number: { density: { enable: true, area: 800 }, value: 80 },
         opacity: {
-          value: 0.5,
+          value: 0.4,
         },
         shape: {
           type: 'circle',
