@@ -34,6 +34,7 @@ export default function ParticlesBackground() {
             'hsl(326, 27%, 50%)',
             'hsl(83, 37%, 63%)',
             'hsl(24, 66%, 67%)',
+            '#0077B5',
           ],
         },
         move: {

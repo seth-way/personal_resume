@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import * as React from 'react';
 import { Typography } from '@material-tailwind/react';
@@ -25,6 +25,7 @@ export default function About() {
             alt='headshot'
             fill
             style={{ objectFit: 'cover', borderRadius: '400px' }}
+            sizes='(max-width: 576px) 192px, 384px'
           />
         </div>
         <div className='text-center max-w-prose'>
