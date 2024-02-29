@@ -1,3 +1,5 @@
+'use client';
+
 import { create } from 'zustand';
 import { Project } from '@/lib/types';
 import { getErrorMessage } from '@/lib/utils';

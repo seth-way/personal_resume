@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import { ThemeProvider } from '@material-tailwind/react';
 import AppBar from '@/components/AppBar';
 import AboveTheFold from '@/components/AboveTheFold';
@@ -30,7 +30,7 @@ export default function App() {
           <div
             id={id}
             key={`${id}_${idx}`}
-            className='flex flex-col items-center w-full'
+            className='relative flex flex-col items-center w-full'
           >
             {idx > 0 ? <Divider /> : ''}
             <Component />
