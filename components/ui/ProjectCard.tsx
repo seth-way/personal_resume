@@ -16,7 +16,6 @@ import Divider from '@/components/ui/Divider';
 import { Link } from 'react-scroll';
 import { useProjectStore } from '@/store/useProjectStore';
 import { useShallow } from 'zustand/react/shallow';
-import { Project } from '@/lib/types';
 
 const MarkdownComponents: object = {
   p: (paragraph: { children?: boolean; node?: any }) => {
@@ -93,20 +92,21 @@ export default function ProjectCard() {
           floated={false}
           shadow={false}
           color='transparent'
-          placeholder='card_header'
+          placeholder='project_card_header'
           className='rounded-none border-b border-white/10 text-white pb-8'
         >
           <Typography variant='h2' placeholder={`${title}_project_header`}>
             {title}
           </Typography>
         </CardHeader>
+        <CardBody placeholder='project_card_body'>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={MarkdownComponents}
         >
           {markdown}
-        </ReactMarkdown>
-        <CardFooter placeholder={`${title}_footer`}>
+        </ReactMarkdown></CardBody>
+        <CardFooter placeholder='project_card_footer'>
           <Link to='PROJECTS' smooth={true} offset={-70} duration={500}>
             <Button onClick={handleClick}>Close Project</Button>
           </Link>

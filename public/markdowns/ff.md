@@ -5,6 +5,6 @@ I challenged myself by timeboxing this build to only a few hours. This forced me
 
 I used the 'create-react-app' dependency for the first time. I'd heard its a fast and easy solution for building a react framework. This worked well and saved some time early.
 
-![ff_gif](/images/portfolio/gifs/ff.gif)
+![ff_gif](@/public/images/portfolio/gifs/ff.gif)
 
 Data for fantasy football rankings is publicly available from hundreds of APIs. I chose to store and parse this data locally, because this suited my use case. If I were to continue developing this project, I would allow it to fetch this data on start up so that it continues to be relevant.
