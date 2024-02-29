@@ -1,11 +1,11 @@
-'use client';
+'use client'
 
 import * as React from 'react';
 import { Typography } from '@material-tailwind/react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import { FaDownload } from 'react-icons/fa6';
-import * as data from '@/public/resumeData.json';
+import data from '@/public/resumeData.json';
 
 declare module '@material-tailwind/react' {
   interface ColorOverrides {
@@ -14,8 +14,8 @@ declare module '@material-tailwind/react' {
 }
 
 export default function About() {
-  const { name, bio, email, phone, address } = data.main;
-
+  const { main } = data;
+  const { name, bio, email, phone, address } = main;
   return (
     <div className='content py-12 lg:p-28 gap-10 lg:gap-20'>
       <div className='flex flex-col xl:flex-row justify-center items-center gap-10 lg:gap-20'>

@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import React, { ReactNode, ReactElement, useState, useEffect } from 'react';
+import * as React from 'react';
 import {
   Card,
   CardBody,

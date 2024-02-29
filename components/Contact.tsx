@@ -13,7 +13,7 @@ import {
   validateAllFormFields,
 } from '@/lib/utils';
 
-const { name, phone } = require('@/public/resumeData.json').main;
+import data from '@/public/resumeData.json';
 
 const EMAILJS_OPTIONS = {
   publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
@@ -39,6 +39,8 @@ export default function Contact() {
     emailjs.init(EMAILJS_OPTIONS);
   }, []);
 
+  const { main } = data;
+  const { name, phone } = main;
   const blankForm = { name: '', email: '', subject: '', message: '' };
   const [formInfo, setInfo] = useState<FormValues>(blankForm);
   const [formComplete, updateFormStatus] = useState(false);

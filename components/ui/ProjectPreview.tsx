@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import * as React from 'react';
 import {
@@ -12,7 +12,6 @@ import Button from '@/components/ui/Button';
 import { Link } from 'react-scroll';
 import { useProjectStore } from '@/store/useProjectStore';
 import { useShallow } from 'zustand/react/shallow';
-import { Element, scroller } from 'react-scroll';
 
 interface iProps {
   title: string;

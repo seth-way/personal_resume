@@ -1,5 +1,3 @@
-'use client';
-
 import { ProfilerProps } from 'react';
 
 interface Props {

@@ -1,5 +1,3 @@
-'use client';
-
 import * as React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -23,7 +21,8 @@ const carouselSettings = {
 };
 
 export default function CustomCarousel() {
-  const { projects } = data.portfolio;
+  const { portfolio } = data;
+  const { projects } = portfolio;
 
   return (
     <div className='w-full'>

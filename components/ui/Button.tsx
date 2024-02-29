@@ -1,5 +1,3 @@
-'use client';
-
 import { Button, ButtonProps } from '@material-tailwind/react';
 
 interface Props extends Omit<ButtonProps, 'color'> {
@@ -38,5 +36,5 @@ export default function CustomButton({
   let css = `bg-${color} transition ease-in-out delay-100 hover:scale-110 hover:brightness-125 duration-300`;
   if (moreCSS) css = css + ' ' + moreCSS;
   if (!ready) css = 'hidden';
-  return <Button className={css} color={color} {...(rest as any)} />;
+  return <Button className={css} {...(rest as any)} />;
 }

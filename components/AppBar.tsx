@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   Collapse,
@@ -14,12 +14,10 @@ interface iProps {
   sections: string[];
 }
 
-const defaultProps = { sections: [] };
+export default function AppBar({ sections = [] }: iProps) {
+  const [openNav, setOpenNav] = useState(false);
 
-export default function AppBar({ sections }: iProps = defaultProps) {
-  const [openNav, setOpenNav] = React.useState(false);
-
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       'resize',
       () => window.innerWidth >= 960 && setOpenNav(false)

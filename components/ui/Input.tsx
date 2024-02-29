@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { Input, InputProps } from '@material-tailwind/react';
 import { validateInput } from '@/lib/utils';
