@@ -1,6 +1,6 @@
 I'm currently working with a group of developers and designers to further develop an open-source web application.
 
-![kanban_board](@/public/images/portfolio/images/webchat_kanban.jpg)
+![kanban_board](/images/portfolio/images/webchat_kanban.jpg)
 
 The app provides a GUI to allow a user to customize the look and feel of a webchat instance, see the results of these customizations, and export the custom settings to their own web-chat instance.
 

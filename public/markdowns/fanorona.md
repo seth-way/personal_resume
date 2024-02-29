@@ -8,7 +8,7 @@ I had fun working with the logical problems and cleaning up the presentation wit
 
 I chose to solve this problem by storing the state of the board in a database. I created a system where the player who is currently awaiting their turn will short poll the database until a state change is recognized.
 
-![fanorona](@/public/images/portfolio/gifs/fanorona.gif)
+![fanorona](/images/portfolio/gifs/fanorona.gif)
 
 You can see the slight delay when a move is registered in the gif above.
 
