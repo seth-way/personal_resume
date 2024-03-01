@@ -24,4 +24,4 @@ const nextConfig = isGithub
     }
   : { output: 'export', images: { unoptimized: true } };
 
-export default nextConfig;
+module.exports = nextConfig;
