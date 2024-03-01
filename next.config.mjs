@@ -1,7 +1,7 @@
 const isGithub = process.env.GITHUB_ACTIONS | process.env.GITHUB_PAGES | false;
 
 console.log('\nIS GITHUB ACTIONS??\n', isGithubActions);
-if (isGithubActions) {
+if (isGithub) {
   // trim off `<owner>/`
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '');
 
@@ -15,7 +15,7 @@ if (isGithubActions) {
 /**
  * @type {import('next').NextConfig}
  */
-const nextConfig = isGithubActions
+const nextConfig = isGithub
   ? { basePath: basePath, output: 'export', images: { unoptimized: true } }
   : { output: 'export', images: { unoptimized: true } };
 
