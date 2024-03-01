@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isGithub = process.env.GITHUB_ACTIONS | process.env.GITHUB_PAGES | false;
 
 console.log('\nIS GITHUB ACTIONS??\n', isGithubActions);
 if (isGithubActions) {
@@ -14,7 +12,9 @@ if (isGithubActions) {
   basePath = `/${repo}`;
   console.log('\n\nBASEPATH ????\n\n', basePath);
 }
-
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = isGithubActions
   ? { basePath: basePath, output: 'export', images: { unoptimized: true } }
   : { output: 'export', images: { unoptimized: true } };
