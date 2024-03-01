@@ -18,7 +18,7 @@ if (isGithub) {
  */
 const nextConfig = isGithub
   ? {
-      basePath: '/personal_resume',
+      basePath: '',
       output: 'export',
       images: { unoptimized: true },
     }
