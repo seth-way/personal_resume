@@ -2,6 +2,7 @@
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
+console.log('\nIS GITHUB ACTIONS??\n', isGithubActions);
 if (isGithubActions) {
   // trim off `<owner>/`
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '');
