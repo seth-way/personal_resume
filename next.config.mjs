@@ -16,7 +16,11 @@ if (isGithub) {
  * @type {import('next').NextConfig}
  */
 const nextConfig = isGithub
-  ? { basePath: basePath, output: 'export', images: { unoptimized: true } }
+  ? {
+      basePath: '/personal_resume',
+      output: 'export',
+      images: { unoptimized: true },
+    }
   : { output: 'export', images: { unoptimized: true } };
 
 export default nextConfig;
