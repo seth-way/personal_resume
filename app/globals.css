@@ -31,4 +31,13 @@
   canvas {
     @apply !max-h-screen;
   }
+  html::-webkit-scrollbar {
+    @apply border-l border-black max-w-4;
+  }
+  html::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply bg-gray-900 rounded;
+  }
 }

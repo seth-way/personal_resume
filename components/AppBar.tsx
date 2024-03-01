@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import {
   Collapse,
@@ -10,18 +10,37 @@ import {
 } from '@material-tailwind/react';
 
 import { Link } from 'react-scroll';
+
+import { useEventStore } from '@/store/useEventStore';
+import { useShallow } from 'zustand/react/shallow';
+
 interface iProps {
   sections: string[];
 }
 
 export default function AppBar({ sections = [] }: iProps) {
+  const [scrollingActive, scrolledToTop, mouseOverAppbar] = useEventStore(
+    useShallow(state => [
+      state.scrollingActive,
+      state.scrolledToTop,
+      state.mouseOverAppbar,
+    ])
+  );
+
   const [openNav, setOpenNav] = useState(false);
+  const [hoverActive, setHover] = useState(false);
 
   useEffect(() => {
     window.addEventListener(
       'resize',
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
+    return () => {
+      window.removeEventListener(
+        'resize',
+        () => window.innerWidth >= 960 && setOpenNav(false)
+      );
+    };
   }, []);
 
   const activeStyle = 'text-secondary font-bold anti-aliased';
@@ -53,9 +72,14 @@ export default function AppBar({ sections = [] }: iProps) {
     </ul>
   );
 
+  const NavBarCSS =
+    'fixed transition-[top] ease-in-out duration-300 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-background border-0 ';
+
+  const showNavbar = scrollingActive || scrolledToTop || mouseOverAppbar;
+
   return (
     <Navbar
-      className='fixed top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-background border-0'
+      className={NavBarCSS + (showNavbar ? 'top-0' : '-top-20')}
       placeholder='navbar'
     >
       <div className='flex items-center justify-around text-white'>
