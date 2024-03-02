@@ -11,6 +11,7 @@ interface iProps {
 
 const renderEdu = (edu: Edu, idx: number) => {
   const { school, degree, graduated, description } = edu;
+
   return (
     <div
       className='flex flex-col items-center text-center [&_*]:max-w-prose'
@@ -25,12 +26,16 @@ const renderEdu = (edu: Edu, idx: number) => {
       </Typography>
       <Typography
         variant='small'
-        className='text-red-300'
+        className='text-red-300 mt-1'
         placeholder='school_info'
       >
         {`${degree} · ${graduated}`}
       </Typography>
-      <Typography variant='paragraph' placeholder='school_about'>
+      <Typography
+        variant='paragraph'
+        className='mt-2'
+        placeholder='school_about'
+      >
         {description}
       </Typography>
     </div>
@@ -53,12 +58,12 @@ const renderJob = (job: Job, idx: number) => {
       </Typography>
       <Typography
         variant='small'
-        className='text-red-300'
+        className='text-red-300 mt-1'
         placeholder='job_info'
       >
         {`${title} · ${years}`}
       </Typography>
-      <Typography variant='paragraph' placeholder='job_about'>
+      <Typography variant='paragraph' className='mt-2' placeholder='job_about'>
         {description}
       </Typography>
     </div>

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import * as React from 'react';
 import {
@@ -47,7 +47,7 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
     <Card
       variant='gradient'
       color='gray'
-      className='flex flex-col justify-between place-items-center text-white text-center'
+      className='p-3 flex flex-col align-center text-white text-center h-[400px]'
       placeholder={`${title}_preview`}
     >
       <CardHeader
@@ -55,21 +55,24 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
         shadow={false}
         color='transparent'
         placeholder='card_header'
-        className='rounded-none border-b border-white/10 text-white pb-8'
+        className='flex flex-col flex-none max-h-36 justify-center align-center rounded-none border-b border-white/10 text-white !m-0'
       >
-        <Typography variant='h2' placeholder={`${title}_header`}>
+        <Typography variant='h2' placeholder={`${title}_header`} className='mb-2'>
           {title}
         </Typography>
       </CardHeader>
       <CardBody
-        className='p-12 h-full flex flex-col gap-[5%] lg:gap-[15%] justify-start items-center'
+        className='p-3 h-full flex flex-col justify-center items-center'
         placeholder={`${title}_body`}
       >
         <Typography variant='lead' placeholder={`${title}_description`}>
           {description}
         </Typography>
       </CardBody>
-      <CardFooter placeholder={`${title}_footer`}>
+      <CardFooter
+        className='flex flex-col justify-center max-h-12'
+        placeholder={`${title}_footer`}
+      >
         <ButtonPicker />
       </CardFooter>
     </Card>

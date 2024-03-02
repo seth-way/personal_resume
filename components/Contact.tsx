@@ -90,9 +90,9 @@ export default function Contact() {
           </Typography>
         </div>
       </div>
-      <div className='flex flex-col lg:flex-row items-center lg:justify-center gap-6 lg:gap-20 w-full'>
-        <form onSubmit={handleSubmit}>
-          <div className='flex flex-col w-96 gap-4'>
+      <div className='flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-20 w-full'>
+        <form onSubmit={handleSubmit} className='max-w-full mx-2'>
+          <div className='flex flex-col w-96 gap-4 items-center max-w-full'>
             <Input id='name' value={formInfo.name} onChange={handleChange} />
             <Input
               id='email'

@@ -22,14 +22,26 @@
   body {
     @apply bg-background text-foreground flex flex-col items-center;
   }
+  canvas {
+    @apply !max-h-screen;
+  }
   .content {
     @apply flex flex-col flex-1 shrink-0 justify-center items-center max-w-screen-xl;
   }
   .leading-relaxed {
     @apply !text-gray-400;
   }
-  canvas {
-    @apply !max-h-screen;
+  .slick-slide {
+    @apply !box-border !h-[400px];
+  }
+  .slick-slide div {
+    @apply !flex flex-col !h-[400px] w-full;
+  }
+  .slick-list {
+    @apply !relative !block overflow-hidden !w-full;
+  }
+  .slick-track {
+    @apply !flex flex-row flex-nowrap gap-4 h-[400px] items-stretch;
   }
   html::-webkit-scrollbar {
     @apply border-l border-black max-w-4;
