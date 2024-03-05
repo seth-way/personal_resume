@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   Collapse,
@@ -9,10 +9,11 @@ import {
   IconButton,
 } from '@material-tailwind/react';
 
-import { Link } from 'react-scroll';
+import Scroller from 'react-scroll';
 import { isMobile } from 'react-device-detect';
-
-import { useEventStore } from '@/store/useEventStore';
+import useProjectStore, { ProjectState } from '@/store/useProjectStore';
+import useEventStore, { EventState } from '@/store/useEventStore';
+import useWindowStore, { WindowState } from '@/store/useWindowStore';
 import { useShallow } from 'zustand/react/shallow';
 
 interface iProps {
@@ -20,28 +21,29 @@ interface iProps {
 }
 
 export default function AppBar({ sections = [] }: iProps) {
+  const visible = useProjectStore((state: ProjectState) => state.visible);
   const [scrollingActive, scrolledToTop, mouseOverAppbar] = useEventStore(
-    useShallow(state => [
+    useShallow((state: EventState) => [
       state.scrollingActive,
       state.scrolledToTop,
       state.mouseOverAppbar,
     ])
   );
+  //const scrolledToTop = useEventStore(state => state.scrolledToTop);
+  //const mouseOverAppbar = useEventStore(state => state.mouseOverAppbar);
+  const [width, height] = useWindowStore(
+    useShallow((state: WindowState) => [state.width, state.height])
+  );
 
   const [openNav, setOpenNav] = useState(false);
 
   useEffect(() => {
-    window.addEventListener(
-      'resize',
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
-    return () => {
-      window.removeEventListener(
-        'resize',
-        () => window.innerWidth >= 960 && setOpenNav(false)
-      );
-    };
-  }, []);
+    if (width >= 960) setOpenNav(false);
+  }, [width]);
+
+  const handleClick = () => {
+    setOpenNav(!openNav);
+  };
 
   const activeStyle = 'text-secondary font-bold anti-aliased';
 
@@ -49,7 +51,7 @@ export default function AppBar({ sections = [] }: iProps) {
     <ul className='mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row items-center lg:gap-6'>
       {sections.map((section, idx) => {
         return (
-          <Link
+          <Scroller.Link
             activeClass={activeStyle}
             to={section}
             spy={true}
@@ -70,7 +72,7 @@ export default function AppBar({ sections = [] }: iProps) {
             >
               {section}
             </Typography>
-          </Link>
+          </Scroller.Link>
         );
       })}
     </ul>
@@ -80,7 +82,8 @@ export default function AppBar({ sections = [] }: iProps) {
     'fixed transition-[top] ease-in-out duration-300 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-background border-0 ';
 
   const showNavbar =
-    isMobile || scrollingActive || scrolledToTop || mouseOverAppbar;
+    !visible &&
+    (isMobile || scrollingActive || scrolledToTop || mouseOverAppbar);
 
   return (
     <Navbar
@@ -95,7 +98,7 @@ export default function AppBar({ sections = [] }: iProps) {
             variant='text'
             className='ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden'
             ripple
-            onClick={() => setOpenNav(!openNav)}
+            onClick={() => handleClick()}
             placeholder='hamburger_menu'
           >
             {openNav ? (

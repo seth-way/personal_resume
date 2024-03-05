@@ -1,20 +1,12 @@
-'use client'
+'use client';
 
-import * as React from 'react';
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Typography,
-} from '@material-tailwind/react';
+import React, { useEffect, useRef, MouseEvent } from 'react';
+import { Typography } from '@material-tailwind/react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import Divider from '@/components/ui/Divider';
-import { Link } from 'react-scroll';
-import { useProjectStore } from '@/store/useProjectStore';
+import useProjectStore, { ProjectState } from '@/store/useProjectStore';
+import useWindowStore, { WindowState } from '@/store/useWindowStore';
 import { useShallow } from 'zustand/react/shallow';
 
 const MarkdownComponents: object = {
@@ -64,56 +56,96 @@ const MarkdownComponents: object = {
 };
 
 export default function ProjectCard() {
-  const [visible, project, markdown, toggleVisible] = useProjectStore(
-    useShallow(state => [
+  const [visible, project, markdown, setVisible] = useProjectStore(
+    useShallow((state: ProjectState) => [
       state.visible,
       state.project,
       state.markdown,
-      state.toggleVisible,
+      state.setVisible,
     ])
   );
-  if (!visible) return <div id='OPEN_PROJECT'></div>;
+  const width = useWindowStore((state: WindowState) => state.width);
 
-  const handleClick = () => {
-    setTimeout(() => toggleVisible(), 1200);
+  const handleClick = (e: MouseEvent) => {
+    e.stopPropagation();
+    setVisible(false);
   };
 
-  const { title } = project;
+  useEffect(() => {
+    if (visible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [visible]);
+
+  const { title, url } = project;
+
   return (
-    <div id='OPEN_PROJECT' className='content gap-8'>
-      <Divider />
-      <Card
-        variant='gradient'
-        color='gray'
-        placeholder='project_card'
-        className='flex flex-col justify-between gap-8 px-8 py-4 place-items-center text-white text-center'
+    <div
+      className={
+        ' fixed overflow-hidden z-50 bg-gray-900 bg-opacity-25 inset-0 transform ease-in-out ' +
+        (visible
+          ? ' transition-opacity opacity-100 duration-500 translate-x-0  '
+          : ' transition-all delay-500 opacity-0 translate-x-full  ')
+      }
+    >
+      <div
+        onClick={e => {
+          e.stopPropagation();
+        }}
+        className={
+          ' w-screen max-w-2xl rounded-l-lg right-0 absolute h-full bg-gradient-to-r from-gray-700 from-1% via-gray-900 via-10% to-background to-90% shadow-xl delay-400 duration-500 ease-in-out transition-all transform ' +
+          (visible ? ' translate-x-0 ' : ' translate-x-full ')
+        }
       >
-        <CardHeader
-          floated={false}
-          shadow={false}
-          color='transparent'
-          placeholder='project_card_header'
-          className='rounded-none border-b border-white/10 text-white pb-8'
+        <div
+          className={
+            'drawer relative w-screen max-w-2xl pb-10 flex flex-col space-y-6 items-center overflow-y-scroll h-full' +
+            (width > 600 ? ' p-8' : ' p-2')
+          }
         >
-          <Typography variant='h2' placeholder={`${title}_project_header`}>
+          <button
+            className='ml-auto h-6 w-6 text-inherit'
+            onClick={e => handleClick(e)}
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              className='h-6 w-6'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M6 18L18 6M6 6l12 12'
+              />
+            </svg>
+          </button>
+          <Typography variant='h4' placeholder='project_title'>
             {title}
           </Typography>
-        </CardHeader>
-        <CardBody placeholder='project_card_body'>
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={MarkdownComponents}
-        >
-          {markdown}
-        </ReactMarkdown></CardBody>
-        <CardFooter placeholder='project_card_footer'>
-          <Link to='PROJECTS' smooth={true} offset={-70} duration={500}>
-            <Button onClick={handleClick}>Close Project</Button>
-          </Link>
-        </CardFooter>
-      </Card>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={MarkdownComponents}
+          >
+            {markdown}
+          </ReactMarkdown>
+          {url && (
+            <div>
+              <span>Checkout the code on </span>
+              <span className='text-secondary'>
+                <a href={url} target='_blank'>
+                  Github
+                </a>
+              </span>
+              <span>!</span>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
-
-// update see more to onClick => update idx

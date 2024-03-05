@@ -1,4 +1,4 @@
-import { ProfilerProps } from 'react';
+import React from 'react';
 
 interface Props {
   color?: 'primary' | 'secondary' | 'accent';

@@ -38,18 +38,21 @@
     @apply !flex flex-col !h-[400px] w-full;
   }
   .slick-list {
-    @apply !relative !block overflow-hidden !w-full;
+    @apply !relative !block overflow-hidden !w-full gap-4;
   }
   .slick-track {
-    @apply !flex flex-row flex-nowrap gap-4 h-[400px] items-stretch;
+    @apply !flex flex-row flex-nowrap !gap-4 h-[400px] items-stretch;
   }
-  html::-webkit-scrollbar {
-    @apply border-l border-black max-w-4;
+}
+
+@layer components {
+  ::-webkit-scrollbar {
+    @apply border-l border-black !max-w-4;
   }
-  html::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     @apply bg-background;
   }
-  html::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     @apply bg-gray-900 rounded;
   }
 }

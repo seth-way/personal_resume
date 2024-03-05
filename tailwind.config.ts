@@ -79,7 +79,15 @@ const config: Config = withMT({
       matchUtilities(
         { 'w-screen': width => ({ width: `${width}vw` }) },
         { values: Object.assign(screenSizes, theme('screenSize', {})) }
-      );
+      ),
+        matchUtilities(
+          {
+            'h-screen': height => ({
+              height: `${height}vh`,
+            }),
+          },
+          { values: Object.assign(screenSizes, theme('screenSize', {})) }
+        );
     }),
   ],
 }) as Config;

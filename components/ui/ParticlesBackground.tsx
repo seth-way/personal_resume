@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import type { Container, ISourceOptions } from '@tsparticles/engine';
+import { type Container, type ISourceOptions } from '@tsparticles/engine';
 import { loadSlim } from '@tsparticles/slim';
 
 export default function ParticlesBackground() {

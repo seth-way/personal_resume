@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 import {
   Card,
   CardBody,
@@ -9,9 +9,9 @@ import {
   Typography,
 } from '@material-tailwind/react';
 import Button from '@/components/ui/Button';
-import { Link } from 'react-scroll';
-import { useProjectStore } from '@/store/useProjectStore';
-import { useShallow } from 'zustand/react/shallow';
+// import { Link } from 'react-scroll';
+import useProjectStore, { ProjectState } from '@/store/useProjectStore';
+import useWindowStore, { WindowState } from '@/store/useWindowStore';
 
 interface iProps {
   title: string;
@@ -21,33 +21,39 @@ interface iProps {
 }
 
 export default function ProjectPreview({ title, description, idx }: iProps) {
-  const [visible, toggleVisible, updateActive] = useProjectStore(
-    useShallow(state => [
-      state.visible,
-      state.toggleVisible,
-      state.updateActive,
-    ])
+  const visible = useProjectStore((state: ProjectState) => state.visible);
+  const setVisible = useProjectStore((state: ProjectState) => state.setVisible);
+  const updateActive = useProjectStore(
+    (state: ProjectState) => state.updateActive
   );
+  const width = useWindowStore((state: WindowState) => state.width);
 
-  const handleClick = () => {
-    toggleVisible();
-    updateActive(idx);
+  // determines size of preview header font
+  // based on slider breakpoints / available space
+  const useSmallFonts = () => {
+    if (width < 600) return true;
+    if (width < 800) return false;
+    if (width < 1200) return true;
+    return false;
   };
 
-  const ButtonPicker = () =>
-    visible ? (
-      <Button onClick={handleClick}>Show Less</Button>
-    ) : (
-      <Link to='OPEN_PROJECT' smooth={true} offset={-30} duration={500}>
-        <Button onClick={handleClick}>See More</Button>
-      </Link>
-    );
+  const [useSmall, setToSmall] = useState(useSmallFonts());
+
+  useEffect(() => {
+    setToSmall(useSmallFonts());
+  }, [width]);
+
+  const handleClick = (e: MouseEvent) => {
+    e.stopPropagation();
+    setVisible(true);
+    updateActive(idx);
+  };
 
   return (
     <Card
       variant='gradient'
       color='gray'
-      className='p-3 flex flex-col align-center text-white text-center h-[400px]'
+      className='flex flex-col align-center text-white text-center h-[400px] px-4'
       placeholder={`${title}_preview`}
     >
       <CardHeader
@@ -55,9 +61,13 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
         shadow={false}
         color='transparent'
         placeholder='card_header'
-        className='flex flex-col flex-none max-h-36 justify-center align-center rounded-none border-b border-white/10 text-white !m-0'
+        className='flex flex-col flex-none h-1/4 justify-center align-center rounded-none border-b border-white/10 text-white !m-0'
       >
-        <Typography variant='h2' placeholder={`${title}_header`} className='mb-2'>
+        <Typography
+          variant={useSmall ? 'h4' : 'h3'}
+          placeholder={`${title}_header`}
+          className='mb-2'
+        >
           {title}
         </Typography>
       </CardHeader>
@@ -65,15 +75,18 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
         className='p-3 h-full flex flex-col justify-center items-center'
         placeholder={`${title}_body`}
       >
-        <Typography variant='lead' placeholder={`${title}_description`}>
+        <Typography
+          variant={useSmall ? 'paragraph' : 'lead'}
+          placeholder={`${title}_description`}
+        >
           {description}
         </Typography>
       </CardBody>
       <CardFooter
-        className='flex flex-col justify-center max-h-12'
+        className='flex flex-col justify-center h-20 pb-3'
         placeholder={`${title}_footer`}
       >
-        <ButtonPicker />
+        <Button onClick={e => handleClick(e)}>Show More</Button>
       </CardFooter>
     </Card>
   );

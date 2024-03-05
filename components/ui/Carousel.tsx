@@ -21,8 +21,6 @@ export default function CustomCarousel() {
 
   if (!mounted) return <div></div>;
 
-  // original className string -> '[&>.slick-list>.slick-track]:flex [&>.slick-list>.slick-track]:gap-4'
-
   const breakPoints = [
     { breakpoint: 1100, settings: { slidesToShow: 2 } },
     { breakpoint: 800, settings: { slidesToShow: 1 } },
@@ -31,8 +29,9 @@ export default function CustomCarousel() {
   const carouselSettings = {
     dots: true,
     infinite: true,
-    speed: 750,
-    //autoplay: true,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     centerMode: true,
     centerPadding: '60px',
     pauseOnFocus: true,
@@ -40,6 +39,7 @@ export default function CustomCarousel() {
     slidesToScroll: 1,
     dotsClass: 'slick-dots [&>li>button::before]:!text-white',
     arrows: isMobile ? false : true,
+    className: '[&>.slick-list>.slick-track]:gap-4',
     responsive: breakPoints,
   };
 

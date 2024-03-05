@@ -30,12 +30,6 @@
     "skillMessage": "I've tried to honestly assess my competency with these technical skills. However, I understand that you never know everything about anything. I am continuing to learn and grow.",
     "education": [
       {
-        "school": "Full Stack Academy",
-        "degree": "Software Engineering Immersive",
-        "graduated": "December 2022",
-        "description": "Through an advanced curriculum and project-based learning environment, FSA teaches students today’s cutting-edge development technologies. The program prepares graduates for software engineering roles at top-tier technology companies. The JavaScript-driven curriculum immerses its students in the latest web technologies such as Node.js and React."
-      },
-      {
         "school": "Hack Reactor",
         "degree": "Seattle Campus",
         "graduated": "May 2020",

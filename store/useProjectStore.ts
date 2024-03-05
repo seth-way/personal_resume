@@ -1,6 +1,7 @@
 'use client';
 
-import { create } from 'zustand';
+import create from 'zustand';
+import { combine } from 'zustand/middleware';
 import { Project } from '@/lib/types';
 import { getErrorMessage } from '@/lib/utils';
 
@@ -15,7 +16,7 @@ interface State {
 }
 
 interface Actions {
-  toggleVisible: () => void;
+  setVisible: (status: boolean) => void;
   updateActive: (idx: number) => void;
 }
 
@@ -26,23 +27,37 @@ const INITIAL_STATE: State = {
   markdown: 'loading project info...',
 };
 
-export const useProjectStore = create<State & Actions>((set, get) => ({
-  visible: INITIAL_STATE.visible,
-  activeIdx: INITIAL_STATE.activeIdx,
-  project: INITIAL_STATE.project,
-  markdown: INITIAL_STATE.markdown,
-  toggleVisible: () => {
-    set({ visible: !get().visible });
-  },
-  updateActive: async idx => {
-    try {
-      const path = projects[idx].path;
-      const mdPath = '/markdowns/' + path + '.md';
-      const doc = await fetch(mdPath);
-      const text = await doc.text();
-      set({ activeIdx: idx, project: projects[idx], markdown: text });
-    } catch (e) {
-      console.log(getErrorMessage(e));
-    }
-  },
-}));
+const useProjectStore = create(
+  combine<State, Actions>(
+    {
+      visible: INITIAL_STATE.visible,
+      activeIdx: INITIAL_STATE.activeIdx,
+      project: INITIAL_STATE.project,
+      markdown: INITIAL_STATE.markdown,
+    },
+    (set, get) => ({
+      setVisible: (status: boolean) => {
+        set(state => ({ ...state, visible: status }));
+      },
+      updateActive: async (idx: number) => {
+        try {
+          const path = projects[idx].path;
+          const mdPath = '/markdowns/' + path + '.md';
+          const doc = await fetch(mdPath);
+          set({
+            activeIdx: idx,
+            project: projects[idx],
+            markdown: await doc.text(),
+          });
+        } catch (e) {
+          console.log(getErrorMessage(e));
+          set({ ...get() });
+        }
+      },
+    })
+  )
+);
+
+export type ProjectState = State & Actions;
+
+export default useProjectStore;
