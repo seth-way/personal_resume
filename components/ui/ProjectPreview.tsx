@@ -30,17 +30,17 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
 
   // determines size of preview header font
   // based on slider breakpoints / available space
-  const useSmallFonts = () => {
+  const deploySmallFonts = () => {
     if (width < 600) return true;
     if (width < 800) return false;
     if (width < 1200) return true;
     return false;
   };
 
-  const [useSmall, setToSmall] = useState(useSmallFonts());
+  const [usingSmallFonts, setToSmall] = useState(deploySmallFonts());
 
   useEffect(() => {
-    setToSmall(useSmallFonts());
+    setToSmall(deploySmallFonts());
   }, [width]);
 
   const handleClick = (e: MouseEvent) => {
@@ -64,7 +64,7 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
         className='flex flex-col flex-none h-1/4 justify-center align-center rounded-none border-b border-white/10 text-white !m-0'
       >
         <Typography
-          variant={useSmall ? 'h4' : 'h3'}
+          variant={usingSmallFonts ? 'h4' : 'h3'}
           placeholder={`${title}_header`}
           className='mb-2'
         >
@@ -76,7 +76,7 @@ export default function ProjectPreview({ title, description, idx }: iProps) {
         placeholder={`${title}_body`}
       >
         <Typography
-          variant={useSmall ? 'paragraph' : 'lead'}
+          variant={usingSmallFonts ? 'paragraph' : 'lead'}
           placeholder={`${title}_description`}
         >
           {description}
