@@ -39,8 +39,7 @@ export default function Contact() {
     emailjs.init(EMAILJS_OPTIONS);
   }, []);
 
-  const { main } = data;
-  const { name, phone } = main;
+  const { name, phone } = data.main;
   const blankForm = { name: '', email: '', subject: '', message: '' };
   const [formInfo, setInfo] = useState<FormValues>(blankForm);
   const [formComplete, updateFormStatus] = useState(false);

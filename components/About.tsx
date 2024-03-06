@@ -14,8 +14,7 @@ declare module '@material-tailwind/react' {
 }
 
 export default function About() {
-  const { main } = data;
-  const { name, bio, email, phone, address } = main;
+  const { name, bio, email, phone, address } = data.main;
   return (
     <div className='content py-12 lg:p-28 gap-10 lg:gap-20'>
       <div className='flex flex-col xl:flex-row justify-center items-center gap-10 lg:gap-20'>

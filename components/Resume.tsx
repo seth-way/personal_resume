@@ -20,8 +20,7 @@ type Job = {
 export type { Edu, Job };
 
 export default function Resume() {
-  const { resume } = data;
-  const { skillMessage, education, work, skills } = resume;
+  const { education, work } = data.resume;
   return (
     <div className='content py-12 lg:py-28 gap-6 lg:gap-20 w-full'>
       <ResumeSection education={education as Edu[]} />

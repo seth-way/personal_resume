@@ -27,7 +27,7 @@
     ]
   },
   "resume": {
-    "skillMessage": "I've tried to honestly assess my competency with these technical skills. However, I understand that you never know everything about anything. I am continuing to learn and grow.",
+    "skillMessage": "These are a portion of the languages and libraries that I've worked with in my time as a Software Engineer. Some I know more extensively than others, but I mostly just enjoy the challenge and journey of learning to work with new technologies.",
     "education": [
       {
         "school": "Hack Reactor",
@@ -57,42 +57,28 @@
       }
     ],
     "skills": [
-      {
-        "name": "JavaScript (ES6+)",
-        "level": "90%"
-      },
-      {
-        "name": "C#",
-        "level": "25%"
-      },
-      {
-        "name": "Python",
-        "level": "20%"
-      },
-      {
-        "name": "CSS",
-        "level": "50%"
-      },
-      {
-        "name": "ReactJS",
-        "level": "85%"
-      },
-      {
-        "name": "ExpressJS",
-        "level": "80%"
-      },
-      {
-        "name": "AWS",
-        "level": "50%"
-      },
-      {
-        "name": "Azure",
-        "level": "40%"
-      },
-      {
-        "name": "Docker",
-        "level": "25%"
-      }
+      { "skill": "JavaScript (ES6+)", "value": 90 },
+      { "skill": "C#", "value": 25 },
+      { "skill": "Python", "value": 20 },
+      { "skill": "CSS", "value": 50 },
+      { "skill": "ReactJS", "value": 85 },
+      { "skill": "ExpressJS", "value": 80 },
+      { "skill": "AWS", "value": 50 },
+      { "skill": "Azure", "value": 40 },
+      { "skill": "Docker", "value": 25 },
+      { "skill": "TypeScript", "value": 65 },
+      { "skill": "Java", "value": 30 },
+      { "skill": "SQL", "value": 20 },
+      { "skill": "HTML", "value": 50 },
+      { "skill": "MongoDB", "value": 40 },
+      { "skill": "PostGreSQL", "value": 25 },
+      { "skill": "NGINX", "value": 20 },
+      { "skill": "Next.js", "value": 65 },
+      { "skill": "Tailwind CSS", "value": 75 },
+      { "skill": "Git", "value": 60 },
+      { "skill": "kv DBMS", "value": 20 },
+      { "skill": "Vercel", "value": 50 },
+      { "skill": "Node.js", "value": 80 }
     ]
   },
   "portfolio": {

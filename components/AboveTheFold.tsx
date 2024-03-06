@@ -7,8 +7,7 @@ import ParticlesBackground from '@/components/ui/ParticlesBackground';
 import data from '@/public/resumeData.json';
 
 export default function AboveTheFold() {
-  const { main } = data;
-  const { name, description, linkedIn, github } = main;
+  const { name, description, linkedIn, github } = data.main;
   const firstName = name.split(' ')[0];
 
   return (

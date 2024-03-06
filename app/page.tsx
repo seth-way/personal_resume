@@ -8,6 +8,7 @@ import Divider from '@/components/ui/Divider';
 import About from '@/components/About';
 import Resume from '@/components/Resume';
 import Projects from '@/components/Projects';
+import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import useProjectStore, { ProjectState } from '@/store/useProjectStore';
 import useEventStore, { EventState } from '@/store/useEventStore';
@@ -24,6 +25,7 @@ const sections: KeyAndComponent[] = [
   ['ABOUT', About],
   ['RESUME', Resume],
   ['PROJECTS', Projects],
+  ['SKILLS', Skills],
   ['CONTACT', Contact],
 ];
 
