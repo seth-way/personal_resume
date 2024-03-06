@@ -74,7 +74,7 @@ export default function Contact() {
   };
 
   return (
-    <div className='content justify-start py-12 lg:py-28 gap-10 lg:gap-20 w-full min-h-screen'>
+    <div className='content justify-start py-12 lg:py-28 gap-10 lg:gap-20 w-full'>
       <div className='flex flex-col lg:flex-row items-center lg:justify-center gap-6 lg:gap-20 w-full'>
         <FaEnvelope color='#A9C47F' size={40} />
         <div className='max-w-prose'>
