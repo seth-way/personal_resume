@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import React from 'react';
 import { Typography } from '@material-tailwind/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import ParticlesBackground from '@/components/ui/ParticlesBackground';

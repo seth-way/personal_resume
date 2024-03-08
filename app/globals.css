@@ -43,6 +43,10 @@
   .slick-track {
     @apply !flex flex-row flex-nowrap !gap-4 h-[400px] items-stretch;
   }
+  input:-webkit-autofill {
+    -webkit-text-fill-color: white !important;
+    @apply border bg-clip-text;
+  }
 }
 
 @layer components {

@@ -3,7 +3,7 @@
     "name": "Seth Way",
     "description": "Software Engineer & Military Veteran. Currently looking for a positive and engaging team where I can contribute while continuing to learn and grow",
     "image": "headShot.jpg",
-    "bio": "In 2019, I honorably completed my Military Service. Since then, I’ve graduated from the Microsoft Software & Systems Academy, as well as Galvanize, one of the nation’s leading Software Engineering bootcamps. I’ve learned the basics and some highly advanced concepts in several programming languages. I've put those skills to use to create interesting and useful tools, while supporting myself in my entrepreneurial ventures. I’ve met project deadlines while working with teams of incredibly talented individuals. I’m excited and motivated to take on the next challenge.",
+    "bio": "In 2019 I honorably completed my Military Service. Since then I’ve graduated from the Microsoft Software & Systems Academy, as well as Galvanize, one of the nation’s leading Software Engineering bootcamps. I’ve learned the basics and some highly advanced concepts in several programming languages. I've put those skills to use to create interesting and useful tools, while supporting myself in my entrepreneurial ventures. I’ve met project deadlines while working with teams of incredibly talented individuals. I’m excited and motivated to take on the next challenge.",
     "contactmessage": "Please leave a message or visit me on social media. I'm very receptive to any feedback or suggestions and would be excited to discuss any possibilities for collaboration.",
     "email": "seth.r.way@gmail.com",
     "phone": "570-419-2673",
@@ -27,7 +27,7 @@
     ]
   },
   "resume": {
-    "skillMessage": "These are a portion of the languages and libraries that I've worked with in my time as a Software Engineer. Some I know more extensively than others, but I mostly just enjoy the challenge and journey of learning to work with new technologies.",
+    "skillMessage": "This is a selection of the languages and libraries that I've worked with in my time as a software engineer. I'm more familiar with some than others, but I mostly just enjoy the challenge and journey of learning to work with new technologies.",
     "education": [
       {
         "school": "Hack Reactor",
@@ -74,11 +74,14 @@
       { "skill": "PostGreSQL", "value": 25 },
       { "skill": "NGINX", "value": 20 },
       { "skill": "Next.js", "value": 65 },
-      { "skill": "Tailwind CSS", "value": 75 },
+      { "skill": "TailwindCSS", "value": 75 },
       { "skill": "Git", "value": 60 },
       { "skill": "kv DBMS", "value": 20 },
       { "skill": "Vercel", "value": 50 },
-      { "skill": "Node.js", "value": 80 }
+      { "skill": "Node.js", "value": 80 },
+      { "skill": "zustand", "value": 50 },
+      { "skill": "React Hooks", "value": 80 },
+      { "skill": "Redux", "value": 35 }
     ]
   },
   "portfolio": {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Typography } from '@material-tailwind/react';
 import StaggerText from 'react-stagger-text';
 import useWindowStore, { WindowState } from '@/store/useWindowStore';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Typography } from '@material-tailwind/react';
 
 import type { Edu } from '@/components/Resume';

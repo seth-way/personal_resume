@@ -95,7 +95,7 @@ export default function ProjectCard() {
           e.stopPropagation();
         }}
         className={
-          ' w-screen max-w-2xl rounded-l-lg right-0 absolute h-full bg-gradient-to-r from-gray-700 from-1% via-gray-900 via-10% to-background to-90% shadow-xl delay-400 duration-500 ease-in-out transition-all transform ' +
+          ' w-screen max-w-2xl rounded-l-lg right-0 absolute h-full bg-gradient-to-r from-gray-700 from-1% via-gray-900 via-5% to-background to-50% shadow-xl delay-400 duration-500 ease-in-out transition-all transform ' +
           (visible ? ' translate-x-0 ' : ' translate-x-full ')
         }
       >
