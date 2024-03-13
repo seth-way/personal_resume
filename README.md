@@ -88,7 +88,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 2. Update this file to suit your needs. A copy of your resume may be helpful for this part.
 
-   > **:bulb: Tip:**
+   > **:bulb: TIP:**
    > There is also a file named <a href='https://github.com/seth-way/developers_portfolio/blob/main/public/resumeData.ts'>resumeData.ts</a> in the public folder. There, I've included some helpful <em>types</em> and examples if you have any questions about filling this out.
 
 3. Replace <em>`headShot.jpg`</em> in the <em>`public/images/`</em> folder with your own headshot. Feel free to use a high resolution file because Next.js will scale these images on the server-side to save on load times.
@@ -121,7 +121,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
      > **:warning: WARNING:**
      > Make sure your template includes a variable called `name`, `subject`, `email`, and `message` to store the senders information.
 
-     > **:bulb: Tip:**
+     > **:bulb: TIP:**
      > If you'd like to skip this step, you can do so in the <em>app/page.tsx</em> file by commenting out the <em>`CONTACT`</em> section from the <em>`sections`</em> array. Users will be unable to contact you through the app.
 
   2. Create a <em>`.env.local`</em> in the root directory & create the following variables:
