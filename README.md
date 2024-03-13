@@ -13,7 +13,7 @@
   <a href='#customize'><strong>Customize</strong></a> ·
   <a href='#deploy'><strong>Deploy</strong></a>
 </p>
-<p>Check out a <a href='https://www.sethway.co' target='_blank'>live demo!</a></p>
+<p>Check out a <a href='https://www.sethway.co' target='blank'>live demo!</a></p>
 
 <h2 id='purpose'>Purpose ✨</h2>
 
@@ -23,15 +23,15 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 - Easy to Use: No coding experience required! Simply fill in the resumeData.json with your own information & the app will be entirely unique to you!
 
-- Quick & Easy Deployment: [Next.js](https://nextjs.org) App Router requires no setup!
+- Quick & Easy Deployment: [Next.js](https://nextjs.org){:target="_blank"} App Router requires no setup!
 
 - Mobile-Friendly Design: Your portfolio will look fantastic on any device, from desktops to smartphones.
 
 - Host your resume details & make a pdf version available for download to potential recruiters.
 
-- Display your coding projects with this app's clean and responsive [react-slick](https://react-slick.neostack.com/) carousel.
+- Display your coding projects with this app's clean and responsive [react-slick](https://react-slick.neostack.com/){:target="_blank"} carousel.
 
-- Allow recruiters & other visitors to contact your email directly from the site using [the emailJS](https://www.emailjs.com/) API!
+- Allow recruiters & other visitors to contact your email directly from the site using [the emailJS](https://www.emailjs.com/){:target="_blank"} API!
 
 <details><summary><h2 id='setup'>Set Up ✨</h2></summary>
 
@@ -112,7 +112,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 - <h3>Contact Form</h3>
 
-  1. Visitors are able to fill out the contact form and send emails directly to your mailbox through the free email delivery service <a href='https://www.emailjs.com/' target='_blank'>EmailJS</a>. Sign up for a free account, add a <a href='https://www.emailjs.com/docs/tutorial/adding-email-service/' target='_blank'>personal email service</a>, and create a <a href='https://www.emailjs.com/docs/tutorial/creating-email-template/' target='_blank'>template</a>.
+  1. Visitors are able to fill out the contact form and send emails directly to your mailbox through the free email delivery service <a href='https://www.emailjs.com/' target='blank'>EmailJS</a>. Sign up for a free account, add a <a href='https://www.emailjs.com/docs/tutorial/adding-email-service/' target='blank'>personal email service</a>, and create a <a href='https://www.emailjs.com/docs/tutorial/creating-email-template/' target='blank'>template</a>.
 
      > [!WARNING]
      > Make sure your template includes a variable called `name`, `subject`, `email`, and `message` to store the senders information.
@@ -131,7 +131,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 <details><summary><h2 id='deploy'>Deploy ✨</h2></summary>
 
-- This project was built using the [Next.js](https://nextjs.org) React framework. This inherently works well with a deployment on [Vercel's](https://vercel.com/home) platform. They can provide a free & easy deployment in minutes, all on your own custom url.
+- This project was built using the [Next.js](https://nextjs.org){:target="_blank"} React framework. This inherently works well with a deployment on [Vercel's](https://vercel.com/home){:target="_blank"} platform. They can provide a free & easy deployment in minutes, all on your own custom url.
 
 - I would recommend authorizing your vercel instance to have access to your forked Gihub Repo. This will allow you to link future deployments to any updates you make on the `main` branch.
 
