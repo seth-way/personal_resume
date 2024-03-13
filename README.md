@@ -159,7 +159,9 @@ This project is licensed under the MIT License.
 
 <br><br><br>
 
+![GitHub last commit](https://img.shields.io/github/last-commit/seth-way/developers_portfolio)
 ![GitHub forks](https://img.shields.io/github/forks/seth-way/developers_portfolio?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/seth-way/developers_portfolio?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/seth-way/developers_portfolio)
 
 <p align='center'>Happy Coding!</p>
