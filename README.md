@@ -33,7 +33,9 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 - Allow recruiters & other visitors to contact your email directly from the site using [the emailJS](https://www.emailjs.com/) API!
 
-<details><summary><h2 id='setup'>Set Up ✨</h2></summary>
+<h2 id='setup'>Set Up ✨</h2>
+
+<details><summary>setup details</summary>
 
 1. Prerequisites:
 
@@ -76,7 +78,9 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 </details>
 
-<details><h2 id='customize'><summary>Customize ✨</summary></h2>
+<h2 id='customize'>Customize ✨</h2>
+
+<details><summary>customization details</summary>
   
 - <h3>Basics</h3>
 
@@ -129,7 +133,9 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 </details>
 
-<details><summary><h2 id='deploy'>Deploy ✨</h2></summary>
+<h2 id='deploy'>Deploy ✨</h2>
+
+<details><summary>deployment details</summary>
 
 - This project was built using the [Next.js](https://nextjs.org) React framework. This inherently works well with a deployment on [Vercel's](https://vercel.com/home) platform. They can provide a free & easy deployment in minutes, all on your own custom url.
 
