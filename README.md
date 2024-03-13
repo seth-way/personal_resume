@@ -76,7 +76,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 </details>
 
-<details><summary><h2 id='customize'>Customize ✨</h2></summary>
+<details><h2 id='customize'><summary>Customize ✨</summary></h2>
   
 - <h3>Basics</h3>
 
