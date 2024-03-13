@@ -73,7 +73,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
    npm run dev
    ```
 
-   > [!NOTE]
+   > **:heavy_exclamation_mark: NOTE:**
    > This will start the development server and open your portfolio in your web browser at <http://localhost:3000> by default.
 
 </details>
@@ -88,7 +88,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 2. Update this file to suit your needs. A copy of your resume may be helpful for this part.
 
-   > **Tip**
+   > **:bulb: Tip:**
    > There is also a file named <a href='https://github.com/seth-way/developers_portfolio/blob/main/public/resumeData.ts'>resumeData.ts</a> in the public folder. There, I've included some helpful <em>types</em> and examples if you have any questions about filling this out.
 
 3. Replace <em>`headShot.jpg`</em> in the <em>`public/images/`</em> folder with your own headshot. Feel free to use a high resolution file because Next.js will scale these images on the server-side to save on load times.
@@ -97,7 +97,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
   1. For each project you add, include a markdown with a description of the project in the <em>`public/markdowns/`</em> folder.
 
-     > **Tip**
+     > **:bulb: Tip:**
      > If you have not completed enough projects, and want to skip this or any other section of the portfolio, you can do so in the <em>`app/page.tsx`</em> file. Simply comment out the section you like to discard from the <em>`sections`</em> array, and it won't be included in the app.
      >
      > ```diff
@@ -118,10 +118,10 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
   1. Visitors are able to fill out the contact form and send emails directly to your mailbox through the free email delivery service <a href='https://www.emailjs.com/'>EmailJS</a>. Sign up for a free account, add a <a href='https://www.emailjs.com/docs/tutorial/adding-email-service/'>personal email service</a>, and create a <a href='https://www.emailjs.com/docs/tutorial/creating-email-template/'>template</a>.
 
-     > **Warning**
+     > **:warning: WARNING:**
      > Make sure your template includes a variable called `name`, `subject`, `email`, and `message` to store the senders information.
 
-     > **Tip**
+     > **:bulb: Tip:**
      > If you'd like to skip this step, you can do so in the <em>app/page.tsx</em> file by commenting out the <em>`CONTACT`</em> section from the <em>`sections`</em> array. Users will be unable to contact you through the app.
 
   2. Create a <em>`.env.local`</em> in the root directory & create the following variables:
@@ -141,7 +141,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 
 - I would recommend authorizing your vercel instance to have access to your forked Gihub Repo. This will allow you to link future deployments to any updates you make on the `main` branch.
 
-  > **Warning**
+  > **:warning: WARNING:**
   > Don't forget to add the variables from your `.env.local` file as environment variables on your Vercel app. Otherwise, your app will no longer have access to these variables.
 
 - Feel free to work with other hosting providers if you prefer, but be aware that each service may present its own set of challenges.
