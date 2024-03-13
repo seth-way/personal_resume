@@ -24,9 +24,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// @apply shadow-[inset_0_0_0px_1000px_hsl(var(--background))]
-//::-webkit-autofill,
-//::-webkit-autofill-* {
-//  @apply !shadow-[inset_0_0_0px_1000px_rgb(9,9,11)];
-//}

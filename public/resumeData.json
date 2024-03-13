@@ -12,19 +12,7 @@
     "address": {
       "city": "Penn Yan",
       "state": "New York"
-    },
-    "social": [
-      {
-        "name": "linkedin",
-        "url": "https://www.linkedin.com/in/sethway",
-        "className": "fa fa-linkedin"
-      },
-      {
-        "name": "github",
-        "url": "https://github.com/seth-way",
-        "className": "fa fa-github"
-      }
-    ]
+    }
   },
   "resume": {
     "skillMessage": "This is a selection of the languages and libraries that I've worked with in my time as a software engineer. I'm more familiar with some than others, but I mostly just enjoy the challenge and journey of learning to work with new technologies.",
@@ -89,37 +77,37 @@
       {
         "title": "My Current Project...",
         "description": "Collaborating With Other Developers & Designers to Build A Webchat Editor",
-        "path": "currently",
+        "filename": "currently",
         "url": "https://github.com/pavolum/WebChat-Editor"
       },
       {
         "title": "Reserve A Table",
         "description": "Table Reservation App Built to Withstand Spikes in Traffic",
-        "path": "reserve_a_table",
+        "filename": "reserve_a_table",
         "url": "https://github.com/RSV-App"
       },
       {
         "title": "Fantasy Football Tracker",
         "description": "A React-Based Fantasy Football Draft Tracking Tool",
-        "path": "ff",
+        "filename": "ff",
         "url": "https://github.com/seth-way/fantasyFootballDraftKit"
       },
       {
         "title": "Fanorona",
         "description": "A Two-Player Board Game",
-        "path": "fanorona",
+        "filename": "fanorona",
         "url": "https://github.com/seth-way/BoardGame"
       },
       {
         "title": "Bowling",
         "description": "A Basic, No-CSS Web-App that Uses Logic to Track Bowling Scores",
-        "path": "bowling",
+        "filename": "bowling",
         "url": "https://github.com/seth-way/ghrsea08-mini-apps-2/tree/master/challenge_3"
       },
       {
         "title": "More to Come...",
         "description": "Check Back Soon for More Exciting Projects!",
-        "path": "more",
+        "filename": "more",
         "url": "https://github.com/seth-way?tab=repositories"
       }
     ]

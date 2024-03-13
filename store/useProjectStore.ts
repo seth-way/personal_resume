@@ -41,8 +41,8 @@ const useProjectStore = create(
       },
       updateActive: async (idx: number) => {
         try {
-          const path = projects[idx].path;
-          const mdPath = '/markdowns/' + path + '.md';
+          const filename = projects[idx].filename;
+          const mdPath = '/markdowns/' + filename + '.md';
           const doc = await fetch(mdPath);
           set({
             activeIdx: idx,
