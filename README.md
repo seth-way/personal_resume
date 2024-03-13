@@ -157,7 +157,7 @@ If you encounter any bugs while using this application, please create an issue o
 <h4>License:</h4>
 This project is licensed under the MIT License.
 
-<br><br><br>
+<br>
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/seth-way/developers_portfolio?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/seth-way/developers_portfolio?style=for-the-badge)

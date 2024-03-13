@@ -74,6 +74,6 @@ export default function TextEffect() {
         })}
       </div>
     );
-  }, [width]);
+  }, [width, skills]);
   return isLoaded ? createTextEffect() : <div></div>;
 }

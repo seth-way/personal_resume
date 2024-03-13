@@ -29,8 +29,7 @@ export default function AppBar({ sections = [] }: iProps) {
       state.mouseOverAppbar,
     ])
   );
-  //const scrolledToTop = useEventStore(state => state.scrolledToTop);
-  //const mouseOverAppbar = useEventStore(state => state.mouseOverAppbar);
+
   const [width, height] = useWindowStore(
     useShallow((state: WindowState) => [state.width, state.height])
   );

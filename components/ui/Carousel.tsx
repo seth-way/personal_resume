@@ -46,7 +46,7 @@ export default function CustomCarousel() {
   return (
     <div className='w-full h-full'>
       <Slider {...carouselSettings}>
-        {projects.map(({ title, description, path }, idx) => {
+        {projects.map(({ title, description }, idx) => {
           return (
             <ProjectPreview
               title={title}
