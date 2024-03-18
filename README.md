@@ -89,7 +89,7 @@ This clean, single-page web-app lets anyone easily build & deploy their own stun
 2. Update this file to suit your needs. A copy of your resume may be helpful for this part.
 
    > **:bulb: TIP:**
-   > There is also a file named <a href='https://github.com/seth-way/developers_portfolio/blob/main/public/resumeData.ts'>resumeData.ts</a> in the public folder. There, I've included some helpful <em>types</em> and examples if you have any questions about filling this out.
+   > There is also a file named <a href='https://github.com/seth-way/developers_portfolio/blob/main/lib/types.ts'>`types.ts`</a> in the `lib` folder. There, I've included some helpful <em>types</em> and comments if you have any questions about filling this out.
 
 3. Replace <em>`headShot.jpg`</em> in the <em>`public/images/`</em> folder with your own headshot. Feel free to use a high resolution file because Next.js will scale these images on the server-side to save on load times.
 

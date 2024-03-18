@@ -75,9 +75,9 @@
   "portfolio": {
     "projects": [
       {
-        "title": "My Current Project...",
-        "description": "Collaborating With Other Developers & Designers to Build A Webchat Editor",
-        "filename": "currently",
+        "title": "WebChat Editor",
+        "description": "Collaboration With Other Developers & Designers to Build A Webchat Editor",
+        "filename": "webChatEditor",
         "url": "https://github.com/pavolum/WebChat-Editor"
       },
       {
